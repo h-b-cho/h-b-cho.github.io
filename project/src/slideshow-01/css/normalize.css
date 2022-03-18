@@ -1,0 +1,270 @@
+/** RESET **/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    vertical-align: top;
+    letter-spacing: 0;
+    font-size: 16px;
+    line-height: 1.4;
+    word-break: keep-all;
+    font-weight: 400;
+}
+fieldset, img, textarea {
+    border: 0;
+    outline: 0;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, main {
+    display: block;
+}
+img {
+    max-width: 100%;
+}
+button, input {
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+    padding: 0;
+    margin: 0;
+    outline: none;
+    border: 0;
+}
+body {
+    -webkit-text-size-adjust: none;
+}
+ol, ul {
+    list-style: none;
+}
+address, em {
+    font-style: normal;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 400;
+}
+div {
+    word-break: keep-all;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+}
+iframe {
+    overflow: hidden;
+    border: 0;
+}
+embed {
+    border: 0;
+    margin: 0;
+    -webkit-text-size-adjust: none;
+}
+input[type=text], input[type=password], input[type=number], input[type=tel], input[type=email] {
+    width: 100%;
+    height: 50px;
+    padding: 5px 15px;
+    background-color: #f6f8fa;
+    border: none;
+    outline: none;
+    color: #000;
+    font-size: 16px;
+    line-height: 16px;
+    -webkit-appearance: none;
+}
+input[type=text]:not([readonly]):focus, input[type=password]:not([readonly]):focus, input[type=number]:not([readonly]):focus, input[type=tel]:not([readonly]):focus, input[type=email]:not([readonly]):focus {
+    background-color: #fff;
+    border-color: #00a8e2;
+}
+input[type=text]:read-only, input[type=password]:read-only, input[type=number]:read-only, input[type=tel]:read-only, input[type=email]:read-only {
+    color: #666;
+}
+input[type=text]:read-only.fc_bk, input[type=password]:read-only.fc_bk, input[type=number]:read-only.fc_bk, input[type=tel]:read-only.fc_bk, input[type=email]:read-only.fc_bk {
+    color: #000;
+}
+input[type=text].datepicker:read-only, input[type=password].datepicker:read-only, input[type=number].datepicker:read-only, input[type=tel].datepicker:read-only, input[type=email].datepicker:read-only {
+    color: #000;
+}
+textarea {
+    width: 100%;
+    min-height: 110px;
+    padding: 15px;
+    border: none;
+    outline: none;
+    resize: none;
+    -webkit-appearance: none;
+    font-size: 16px;
+    background-color: #f6f8fa;
+}
+textarea:not([readonly]):focus {
+    background-color: #f6f8fa;
+    border-color: #00a8e2;
+}
+textarea:read-only {
+    color: #666;
+}
+textarea ::-webkit-input-placeholder {
+    font-size: 14px;
+    font-weight: 300;
+    color: #999;
+}
+textarea ::-moz-placeholder {
+    font-size: 14px;
+    font-weight: 300;
+    color: #999;
+}
+textarea ::-ms-placeholder {
+    font-size: 14px;
+    font-weight: 300;
+    color: #999;
+}
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 100%;
+    margin: 0;
+    height: 50px;
+    padding: 5px 20px 5px 10px;
+    background-color: #f6f8fa;
+    background-image: url(../images/icon/icon_down.png);
+    background-repeat: no-repeat;
+    background-size: 8px;
+    background-position: calc(100% - 15px) center;
+    border: none;
+    outline: none;
+    font-size: 14px;
+}
+select option {
+    padding: 5px 10px;
+    background-color: #f6f8fa;
+}
+select option:disabled {
+    color: #999;
+}
+input::-ms-clear {
+    display: none;
+}
+::-webkit-input-placeholder {
+    font-size: 14px;
+    font-weight: 300;
+    color: #999;
+}
+::-moz-placeholder {
+    font-size: 14px;
+    font-weight: 300;
+    color: #999;
+}
+::-ms-placeholder {
+    font-size: 14px;
+    font-weight: 300;
+    color: #999;
+}
+.clearfix:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+button {
+    cursor: pointer;
+    border: none;
+    margin: 0;
+    padding: 0;
+    background-color: rgba(255, 255, 255, 0);
+    outline: none;
+}
+input, button, select {
+    vertical-align: middle;
+}
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+    font-family: 'NotoSansKR', 'Helvetica', 'Malgun Gothic', sans-serif;
+    color: #000;
+    font-size: 16px;
+}
+*[aria-hidden="true"] {
+    display: none;
+}
+*[aria-hidden="false"] {
+    display: block;
+}
+button {
+    text-align: center;
+    cursor: pointer;
+    border: none;
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+    background: transparent;
+    line-height: normal;
+    -webkit-font-smoothing: inherit;
+    -moz-osx-font-smoothing: inherit;
+    -webkit-appearance: none;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    outline: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+hr {
+    height: 10px;
+    margin: 0;
+    border: none;
+    background-color: #f2f4f6;
+}
+/** accessibility **/
+.a11y {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+.skipnavigation {
+    position: relative;
+}
+.skipnavigation a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    z-index: 1;
+    display: block;
+    font-size: 0;
+    background-color: #fff;
+    text-align: center;
+}
+.skipnavigation a:focus {
+    height: 30px;
+    padding: 4px 0;
+    visibility: visible;
+    font-size: 1em;
+}
+.noscroll {
+    overflow: hidden !important;
+    height: 100%;
+}
+.noscroll .wrap {
+    overflow: hidden;
+}
+html, body {
+    margin: 0 auto;
+}
+ul {
+    list-style-type: none;
+}

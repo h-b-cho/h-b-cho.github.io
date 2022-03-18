@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script>
+		document.addEventListener("DOMContentLoaded", function () {
+			var slideContainer = document.querySelector('.slide-container');
+			var slideContent = document.querySelector('.slide-content');
+			var slides = document.querySelectorAll('.slide');
+			var indicator = document.querySelector('.indicator');
+
+
+			if (slides.length) {
+				makeIndicator();
+
+				//초기 세팅
+				slides.forEach(function (item, index, array) {
+					array[0].classList.add('nowSlide')
+					item.classList.remove('nowSlide');
+				})
+
+				//자동슬라이드
+				var thisSlideIndex = 0;
+
+				setInterval(function () {
+					thisSlideIndex++;
+
+					checkSlide();
+
+					if (thisSlideIndex > slides.length - 1) thisSlideIndex = 0;
+					slides[thisSlideIndex].classList.add('nowSlide');
+				}, 3000)
+
+				//slide indicator 개수만큼 만들기
+				function makeIndicator() {
+					var indicatorText = '';
+
+					slides.forEach(function (item, index, array) {
+						indicatorText += `<button class="button">${index}</button>`
+					});
+					indicator.innerHTML = indicatorText;
+				}
+
+				//button 클릭
+				var indicator = document.querySelectorAll('.button');
+
+				indicator.forEach(function (item, index, array) {
+					item.addEventListener('click', function () {
+						checkSlide();
+
+						slides[index].classList.add('nowSlide');
+						thisSlideIndex = index;
+					});
+				});
+
+				//slide 클래스 있는지 체크
+				function checkSlide() {
+					slides.forEach(function (item, index, array) {
+						if (item.classList.contains('nowSlide')) item.classList.remove('nowSlide');
+					});
+				}
+			}
+		})
+	</script>
+</head>
+
+<body>
+	<div class="slide-container">
+		<div class="slide-content">
+			<div class="slide-list">
+				<div class="slide" style="background-color: #e5e5e5;"></div>
+				<div class="slide" style="background-color: red;"></div>
+				<div class="slide" style="background-color: #dddddd;"></div>
+				<div class="slide" style="background-color: green;"></div>
+				<div class="slide" style="background-color: #ccc;"></div>
+			</div>
+		</div>
+	</div>
+	<div class="indicator"></div>
+
+	<style>
+		.slide-container {
+			overflow: hidden;
+			position: relative;
+			width: 800px;
+			height: 300px;
+		}
+		.slide-list {
+			float: left;
+			width: 100%;
+		}
+		.slide-list::before {
+			display: block;
+			content: '';
+			clear: both;
+		}
+		.slide {
+			position: absolute;
+			left: -100%;
+			width: 800px;
+			height: 300px;
+		}
+		.nowSlide {
+			position: absolute;
+			left: 0;
+		}
+		.prev,
+		.next {
+			display: inline-block;
+			width: 100px;
+			height: 100px;
+			border: 1px solid red;
+		}
+	</style>
+</body>
+</html>

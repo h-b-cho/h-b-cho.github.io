@@ -1,0 +1,185 @@
+@charset "UTF-8";
+
+body, html {
+	margin: 0; 
+	width: 100%;
+	height: 100%;
+	min-height: 100%;
+}
+.container {
+	max-width: 1920px;
+	padding: 0 20px;
+}
+img {
+	max-width: 100%;
+	width: 100%;
+}
+
+/** ---------------------- **/
+
+.header {
+	width: 100%;
+	margin: 80px auto;
+	background-color: #999;
+	.slideshow {
+		position: relative;
+		width: 100%;
+		max-width: 960px;
+		margin: 0 auto;
+		height: 320px;
+	}
+	.slide {
+		display: none;
+		position: absolute;
+		top: 50%;
+		left: 0;
+		transform: translateY(-50%);
+	}
+}
+
+/** ---------------------- **/
+
+.section {
+	max-width: 1020px;
+	width: 100%;
+	margin: 0 auto;
+	padding: 80px 0;
+	box-sizing: border-box;
+}
+
+.slide-container {
+	position: relative;
+	width: 100%;
+	margin: 0 auto;
+	min-height: 360px;
+	overflow: hidden;
+	/* overflow: hidden; */
+	ul {
+		position: absolute;
+		display: flex;
+		width: 100%;
+		height: 100%;
+	}
+}
+.slide {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	transition: all ease 1.5s;
+	background: {
+		repeat: no-repeat;
+		position: center center;
+		size: cover;
+	}
+	article {
+		width: 80%;
+		background: rgba(255,255,255, .2);
+		position: absolute;
+		top: 10%;
+		bottom: 10%;
+		left: 10%;
+		padding: 50px;
+	}
+}
+.bg {
+	&01{background-image: url(../images/scienceslide5.png);}
+	&02{background-image: url(../images/scienceslide2.png);}
+	&03{background-image: url(../images/scienceslide4.png);}
+	&04{background-image: url(../images/scienceslide4_1.png);}
+	&05{background-image: url(../images/scienceslide3.png);}
+	&06{background-image: url(../images/scienceslide1.png);}
+}
+
+.slide-nav {
+	position: absolute;
+	width: 100%;
+	height: 71px;
+	left: 50%;
+	top: 50%;
+	transform:translate(-50%, -50%);
+	/* z-index: 999; */
+	a {
+		position: absolute;
+		background: url(../images/common/sprites.png) no-repeat;
+		background-position: 0 -20px;
+		text-indent:-9999em;
+		width: 71px;
+		height: 71px;
+		border-radius: 50%;
+	}
+	[data-direction="prev"]{
+		left: 20px;
+	}
+	[data-direction="next"]{
+		right: 20px;
+		background-position-x: -81px;
+	}
+	.disabled{
+		display: none;
+		pointer-events: none;
+	}
+}
+
+.indicator-container {
+	position: absolute;
+	bottom: 10px;
+	width: 100%;
+	margin: 0 auto;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	button {
+		display: inline-block;
+		width: 16px;
+		height: 16px;
+		text-indent: -999em;
+		margin: 16px;
+	}
+}
+.ind-plus {
+	background: url(../images/common/sprites.png) no-repeat;
+	background-position: -64px 0;
+	transition: .4s;
+	&:hover {
+		transform: rotate(180deg);
+	}
+}
+.indicator {
+	max-width: 100%;
+	button {
+		background: #bae1f3;
+		border-radius: 50%;
+		border: none;
+		box-sizing: border-box;
+		cursor: pointer;
+		&.active{
+			background: #1c9ad6;
+		}
+	}
+}
+.progress-container {
+	// display: flex;
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 4px;
+	background-color: #999;
+	div {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		span {
+			display: inline-block;
+			width: 0%;
+			height: 100%;
+		}
+		&.active{
+			span {
+				width: 100%;
+				background: #1c9ad6;
+			}
+		}
+	}
+}

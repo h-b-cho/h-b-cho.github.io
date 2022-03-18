@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>index3 Slide</title>
+	<link rel="stylesheet" href="./css/normalize.css">
+	<link rel="stylesheet" href="./css/main.css">
+</head>
+
+<body>
+	<div class="section">
+		<header></header>
+		<div class="slide-container">
+			<ul>
+				<li class="slide bg01"><article></article></li>
+				<li class="slide bg02"><article></article></li>
+				<li class="slide bg03"><article></article></li>
+				<li class="slide bg04"><article></article></li>
+				<li class="slide bg05"><article></article></li>
+			</ul> 
+			<div class="indicator-container">
+				<button class="ind-plus">+</button>
+				<div id="indicator" class="indicator"></div>
+			</div>
+			<div id="progress-container" class="progress-container"></div>
+			<div class="slide-nav">
+				<a href="#link" data-direction="prev" class="disabled">prev</a>  
+				<a href="#link" data-direction="next">next</a>
+			</div>
+		</div> 
+	</div>
+
+<script src="./js/index3.js"></script>
+<script>
+	var header = document.querySelector('header'),
+		section = document.querySelector('section'),
+		slidesArray = document.querySelectorAll('.slide-container .slide'),
+		requestURL = 'https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json',
+		request = new XMLHttpRequest();
+	
+	request.open('GET', requestURL);
+
+	request.responseType = 'json'; //xhr.responseType = 'json' 를 사용하면 xhr.responseText 는 호출할 수 없다. 이미 바디를 json으로 파싱했기 때문에 text 형태로는 못불러오는 것으로 보인다.
+	request.send();
+
+	request.onload = function() {
+		var superHeroes = request.response;
+		populateHeader(superHeroes);
+		showHeroes(superHeroes);
+	}
+
+	function populateHeader(jsonObj) {
+		var myH1 = document.createElement('h1');
+		myH1.textContent = jsonObj['squadName'];
+		header.appendChild(myH1);
+
+		var myPara = document.createElement('p');
+		myPara.textContent = 'Hometown: ' + jsonObj['homeTown'] + ' // Formed: ' + jsonObj['formed'];
+		header.appendChild(myPara);
+	}
+
+	function showHeroes(obj) {
+		var heroes = obj['members'],
+			myArticle = document.querySelectorAll('article');
+
+		for (var i=0;i<heroes.length;i++) {
+			var myH2 = document.createElement('h2');
+			var myPara = document.createElement('p');
+			var myList = document.createElement('ul');
+
+			myH2.textContent = heroes[i].name;
+			myPara.textContent = 'Secret identity: ' + heroes[i].secretIdentity + 'Age: ' + heroes[i].age + 'Superpowers:';
+
+			var superPowers = heroes[i].powers;
+			console.log(superPowers);
+
+			for (var j=0;j<superPowers.length;j++) {
+				var listItem = document.createElement('li');
+				listItem.textContent = superPowers[j];
+				myList.appendChild(listItem);
+			}
+
+			myArticle[i].appendChild(myH2);
+			myArticle[i].appendChild(myPara);
+			myArticle[i].appendChild(myList);
+		}
+	}
+</script>
+</body>
+</html>

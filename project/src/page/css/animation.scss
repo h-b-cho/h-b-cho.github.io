@@ -1,0 +1,103 @@
+@charset "UTF-8";
+
+@keyframes mov1 {
+	0% { transform: scale(0.6); }
+	60% { opacity: 1; transform: skew(0, -13deg); }
+	90% { transform: scale(1.2); transform: skew(0, -10deg); }
+}
+
+@keyframes mov2 {
+	0% { opacity: 0; }
+	60% { opacity: 0; top: -30px; }
+	99% { opacity: 1; top: 0px; }
+}
+
+@keyframes mov3 {
+	0% { opacity: 0; }
+	60% { opacity: 0; top: -30px; }
+	99% { opacity: 1; top: 0px; }
+}
+
+@keyframes squeez {
+  0% { transform: skew(-6deg, -6deg); opacity: 0; }
+  36% { transform: skew(3deg, 3deg); opacity: 0.001; }
+  39% { transform: skew(-4deg, -4deg); opacity: 0.5; }
+  43% { transform: skew(2.5deg, 2.5deg); opacity: 1; }
+  48% { transform: skew(-3deg, -3deg); }
+  54% { transform: skew(2deg, 2deg); }
+  61% { transform: skew(-2deg, -2deg); }
+  69% { transform: skew(1deg, 1deg); }
+  78% { transform: skew(-1deg, -1deg); }
+  88% { transform: skew(0deg, 0deg); opacity: 0.667; }
+  100% { opacity: 1; }
+}
+
+@keyframes bgOff {
+	from { background-color: var(--purple); }
+	50% { background-color: var(--blue); }
+	to { background-color: var(--palesky); }
+}
+@keyframes bgOn {
+	from { background-color: var(--palesky); }
+	50% { background-color: var(--blue); }
+	to { background-color: var(--purple); }
+}
+
+@keyframes handleOff {
+	from {
+		box-shadow:
+			0 0.175em 0.175em 0 #0001 inset,
+			0 0.375em 0 #0002 inset,
+			0 0.375em 0 var(--purple) inset,
+			0 0.475em 0.1em #0001 inset;
+		left: 1.125em;
+		width: 1em;
+	}
+	50% {
+		box-shadow:
+			0 0.175em 0.175em 0 #0001 inset,
+			0 0.375em 0 #0002 inset,
+			0 0.375em 0 var(--blue) inset,
+			0 0.475em 0.1em #0001 inset;
+		left: 0.125em;
+		width: 2em;
+	}
+	to {
+		box-shadow:
+			0 0.175em 0.175em 0 #0001 inset,
+			0 0.375em 0 #0002 inset,
+			0 0.375em 0 var(--palesky) inset,
+			0 0.475em 0.1em #0001 inset;
+		left: 0.125em;
+		width: 1em;
+	}
+}
+@keyframes handleOn {
+	from {
+		box-shadow:
+			0 0.175em 0.175em 0 #0001 inset,
+			0 0.375em 0 #0002 inset,
+			0 0.375em 0 var(--palesky) inset,
+			0 0.475em 0.1em #0001 inset;
+		left: 0.125em;
+		width: 1em;
+	}
+	50% {
+		box-shadow:
+			0 0.175em 0.175em 0 #0001 inset,
+			0 0.375em 0 #0002 inset,
+			0 0.375em 0 var(--blue) inset,
+			0 0.475em 0.1em #0001 inset;
+		left: 0.125em;
+		width: 2em;
+	}
+	to {
+		box-shadow:
+			0 0.175em 0.175em 0 #0001 inset,
+			0 0.375em 0 #0002 inset,
+			0 0.375em 0 var(--purple) inset,
+			0 0.475em 0.1em #0001 inset;
+		left: 1.125em;
+		width: 1em;
+	}
+}
